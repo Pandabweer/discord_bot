@@ -486,43 +486,6 @@ class music(commands.Cog):
 
     async def r_refresh_embed(self, ctx):
         # ANCHOR r_refresh_embed
-        #await Pag(title='k', color=3447003, entries=['**Duration**      |      **Requested by**'], length=1, use_defaults=False).start(ctx)
-
-        #await message.add_reaction('⏯️')
-        #await message.add_reaction('⏩')
-        #await message.add_reaction('⏹️')
-        #await message.add_reaction('🔀')
-        #await message.add_reaction('🔁')
-
-        #def check(reaction, user):
-        #    return user != self.bot.user
-        #    
-        #reaction = None
-
-        #while True:
-        #    if str(reaction) == '⏯️':
-        #        if ctx.voice_state.paused:
-        #            ctx.voice_client.resume()
-        #            ctx.voice_state.paused = False
-        #        else:
-        #            ctx.voice_client.pause()
-        #            ctx.voice_state.paused = True
-        #    if str(reaction) == '⏩':
-        #        await ctx.invoke(self._skip)
-        #    if str(reaction) == '⏹️':
-        #        await ctx.invoke(self._stop)
-        #    if str(reaction) == '🔀':
-        #        await ctx.invoke(self._shuffle)
-        #    if str(reaction) == '🔁':
-        #        await ctx.invoke(self._loop)
-        #    try:
-        #        reaction, user = await self.bot.wait_for('reaction_add', timeout = 900.0, check = check)
-        #        await message.remove_reaction(reaction, user)
-        #    except:
-        #        break
-
-        #await message.clear_reactions()
-
         await ctx.channel.purge(limit=100)
         await ctx.send(embed=ctx.voice_state.current.create_embed(ctx.voice_state.songs, ctx.voice_state.loop))
 
